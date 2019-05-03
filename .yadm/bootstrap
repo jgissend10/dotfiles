@@ -1,18 +1,82 @@
 #!/bin/bash
 
-system_type=$(uname -s)
+cd "$(dirname "${BASH_SOURCE[0]}")" \
+    && . "os/utils.sh"
 
-if [ "$system_type" = "Darwin" ]; then
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  # install homebrew if it's missing
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
+verify_os() {
 
-  if [ -f "$HOME/.Brewfile" ]; then
-    echo "Updating homebrew bundle"
-    brew bundle --global
-  fi
+    declare -r MINIMUM_MACOS_VERSION="10.10"
+    declare -r MINIMUM_UBUNTU_VERSION="18.04"
 
-fi
+    local os_name="$(get_os)"
+    local os_version="$(get_os_version)"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if the OS is `macOS` and
+    # it's above the required version.
+
+    if [ "$os_name" == "macos" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for macOS %s+" "$MINIMUM_MACOS_VERSION"
+        fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if the OS is `Ubuntu` and
+    # it's above the required version.
+
+    # elif [ "$os_name" == "ubuntu" ]; then
+
+    #     if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
+    #         return 0
+    #     else
+    #         printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+    #     fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    else
+        printf "Sorry, this script is intended only for macOS!" # and Ubuntu!"
+    fi
+
+    return 1
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Ensure the OS is supported and
+# it's above the required version.
+
+verify_os \
+    || exit 1
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ask_for_sudo
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+./os/create_directories.sh
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+./os/create_local_config_files.sh
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+./os/install/main.sh
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+./os/preferences/main.sh
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+./os/restart.sh

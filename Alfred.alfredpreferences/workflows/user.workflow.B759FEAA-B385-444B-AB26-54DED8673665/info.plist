@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>5F76B70E-854E-4E50-A577-75FF3340FD5E</key>
+		<array/>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F76B70E-854E-4E50-A577-75FF3340FD5E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Project Management</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>workon</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>query="{query}"
+
+list-projects() {
+	if [ -z $PROJECTS_DIR ]; then
+        PROJECTS_DIR=~/.projects/
+	fi
+    ls $PROJECTS_DIR | cut -f 1
+}
+if [ {query} ]
+then
+export json=`list-projects | grep {query} | /usr/local/bin/jq -R -c -s 'split("\n") | map(select(. != "")) |{"items": map(. | {"uid":.,"type": "file","title":.,"subtitle": .,"arg": .,"autocomplete": .,"icon": {"type": "fileicon","path": .}})}'`;
+else
+export json=`list-projects | /usr/local/bin/jq -R -c -s 'split("\n") | map(select(. != "")) |{"items": map(. | {"uid":.,"type": "file","title":.,"subtitle": .,"arg": .,"autocomplete": .,"icon": {"type": "fileicon","path": .}})}'`;
+fi
+
+echo $json</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type a project name to filter</string>
+				<key>title</key>
+				<string>Work on a project</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>workon {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>5F76B70E-854E-4E50-A577-75FF3340FD5E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>list-projects</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>query="{query}"
+
+list-projects() {
+	if [ -z $PROJECTS_DIR ]; then
+        PROJECTS_DIR=~/.projects/
+	fi
+    ls $PROJECTS_DIR | cut -f 1
+}
+if [ {query} ]
+then
+export json=`list-projects | grep {query} | /usr/local/bin/jq -R -c -s 'split("\n") | map(select(. != "")) |{"items": map(. | {"uid":.,"title":.,"subtitle": .,"arg": .,"autocomplete": .,"icon": {"type": "fileicon","path": .}})}'`;
+else
+export json=`list-projects | /usr/local/bin/jq -R -c -s 'split("\n") | map(select(. != "")) |{"items": map(. | {"uid":.,"title":.,"subtitle": .,"arg": .,"autocomplete": .,"icon": {"type": "fileicon","path": .}})}'`;
+fi
+
+echo $json</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type a project name to filter</string>
+				<key>title</key>
+				<string>List projects</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BDEC7D16-D7D0-4649-84C3-D32C0847750C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5F76B70E-854E-4E50-A577-75FF3340FD5E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>BDEC7D16-D7D0-4649-84C3-D32C0847750C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

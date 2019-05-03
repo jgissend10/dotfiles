@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.iamdeveloper.table-rage</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>FA03025E-E59E-4A57-A062-9B0E53260DC2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nick Taylor</string>
+	<key>description</key>
+	<string>Search emoji codes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Table Rage</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>(╯°□°）╯︵ ┻━┻</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>trage</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Table Rage</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FA03025E-E59E-4A57-A062-9B0E53260DC2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2404AE08-D4CF-4265-B7BB-44043DD356DD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>FA03025E-E59E-4A57-A062-9B0E53260DC2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/nickytonline/alfred-workflows</string>
+</dict>
+</plist>

@@ -1,0 +1,14 @@
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 10.14.4 (18E226)
+      Kernel Version: Darwin 18.5.0
+      Boot Volume: Macintosh HD
+      Boot Mode: Normal
+      Computer Name: James’s MacBook Pro
+      User Name: James Szalay (jszalay)
+      Secure Virtual Memory: Enabled
+      System Integrity Protection: Enabled
+      Time since boot: 8 days 20:54
+

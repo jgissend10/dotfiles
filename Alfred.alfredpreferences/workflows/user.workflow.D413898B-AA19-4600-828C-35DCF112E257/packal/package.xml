@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Temporary Mute</name>
+  <version>2.0</version>
+  <bundle>com.cmagnuson.temporarymute</bundle>
+  <updated>1485985110</updated>
+  <file>temporary_mute.alfredworkflow</file>
+</workflow>

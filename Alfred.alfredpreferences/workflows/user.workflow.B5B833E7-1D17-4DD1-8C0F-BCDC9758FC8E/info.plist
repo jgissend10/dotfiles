@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>12C5A7C9-849F-424C-BB1B-F2FDEA083B12</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C91328C5-F763-4E7D-A3C3-E8D13037D1E1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C18B300-6C5B-4FBD-834C-FA1E5F1CEA61</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>12C5A7C9-849F-424C-BB1B-F2FDEA083B12</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C91328C5-F763-4E7D-A3C3-E8D13037D1E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>440B6C85-5036-4A1A-8EEB-F802C0BC2975</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string>Copies your public SSH key to the clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Copy SSH Public Key to Clipboard</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>copyssh</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ {query} ]
+then
+export json=`ls ~/.ssh/$1*.pub | cut -f 5 -d / | /usr/local/bin/jq -R -s -c 'split("\n") | map(select(. != "")) | {"items": map(. | {
+"uid":.,
+"type": "file",
+"title":.,
+"subtitle": ("~/.ssh/"+.+".pub"),
+"arg": .,
+"autocomplete": .,
+"icon": {
+			"type": "fileicon",
+			"path": ("~/.ssh/"+.+".pub")
+		}})}'`;
+else
+export json=`echo '{"items":[{"uid":"id_rsa.pub","type": "file","title":"id_rsa.pub","subtitle": "~/.ssh/id_rsa.pub","arg": "id_rsa.pub","autocomplete": "id_rsa.pub","icon": {"type": "fileicon","path": "~/.ssh/id_rsa.pub"}}]}' | /usr/local/bin/jq`;
+fi
+echo $json</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>defaults to id_rsa.pub</string>
+				<key>title</key>
+				<string>filename</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C18B300-6C5B-4FBD-834C-FA1E5F1CEA61</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd ~; cat .ssh/{query} | pbcopy
+
+echo "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C91328C5-F763-4E7D-A3C3-E8D13037D1E1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Contents of {var:path} copied to clipboard.</string>
+				<key>title</key>
+				<string>ssh key copied to clipboard.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>440B6C85-5036-4A1A-8EEB-F802C0BC2975</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>path</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>12C5A7C9-849F-424C-BB1B-F2FDEA083B12</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>12C5A7C9-849F-424C-BB1B-F2FDEA083B12</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>440B6C85-5036-4A1A-8EEB-F802C0BC2975</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>8C18B300-6C5B-4FBD-834C-FA1E5F1CEA61</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>C91328C5-F763-4E7D-A3C3-E8D13037D1E1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+Memory:
+
+    Memory Slots:
+
+      ECC: Disabled
+      Upgradeable Memory: No
+
+        BANK 0/ChannelA-DIMM0:
+
+          Size: 8 GB
+          Type: DDR4
+          Speed: 2400 MHz
+          Status: OK
+          Manufacturer: Micron
+          Part Number: 8ATF1G64HZ-2G6E1
+          Serial Number: -
+
+        BANK 2/ChannelB-DIMM0:
+
+          Size: 8 GB
+          Type: DDR4
+          Speed: 2400 MHz
+          Status: OK
+          Manufacturer: Micron
+          Part Number: 8ATF1G64HZ-2G6E1
+          Serial Number: -
+

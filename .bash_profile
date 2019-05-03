@@ -21,7 +21,14 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [[ -e "/usr/local/share/bash-completion/bash_completion" ]]; then
+	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+	source "/usr/local/share/bash-completion/bash_completion"
+elif [[ -e "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+	source "/usr/local/etc/profile.d/bash_completion.sh"
+elif [[ -e "/etc/bash_completion" ]]; then
+	source "/etc/bash_completion"
+fi
 
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 

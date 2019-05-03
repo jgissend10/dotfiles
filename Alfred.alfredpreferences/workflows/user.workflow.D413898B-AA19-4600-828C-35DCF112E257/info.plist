@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.cmagnuson.temporarymute</string>
+	<key>connections</key>
+	<dict>
+		<key>0EA52699-4D57-4650-AD76-1B9EF1A1A5CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5075FEF4-9FDD-4CE7-8B74-34E82ACD48C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1BA549D4-8C42-4585-9267-3CF47E778B85</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7A651008-7142-4F96-A2EE-36BF7B6A372E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5075FEF4-9FDD-4CE7-8B74-34E82ACD48C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E72C9267-58E3-40E0-9CD3-4C41D0F28091</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7A651008-7142-4F96-A2EE-36BF7B6A372E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>367CA6B2-485C-413F-AB7D-0E27F4ED1D53</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Charles Magnuson</string>
+	<key>description</key>
+	<string>Temporarily mute your Mac. Great for skipping commercials during sporting events. Use "mute for" to define how many seconds to mute for. Use "mute time" to select predefined mute durations.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Temporary Mute</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set volume with output muteddelay {query}set volume without output muted</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>367CA6B2-485C-413F-AB7D-0E27F4ED1D53</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mute for</string>
+				<key>subtext</key>
+				<string>Enter the number of seconds you would like sound muted.</string>
+				<key>text</key>
+				<string>Temporary Mute</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1BA549D4-8C42-4585-9267-3CF47E778B85</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>muteTime</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7A651008-7142-4F96-A2EE-36BF7B6A372E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<true/>
+				<key>items</key>
+				<string>[{"imagefile":"0d3b85a8242d3f57995a47c4ac66f16ec96c7ff5.png","title":"30 seconds","arg":"30\n"},{"imagefile":"9639732aeb147a5b47505ec2268ce13597a7a044.png","title":"60 sconds","arg":"60"},{"imagefile":"939187538264ff1669f1c16e44c9a410325378cb.png","title":"90 seconds","arg":"90"},{"imagefile":"53288ee375074c7416b1a60ba7110837cd198f55.png","title":"120 seconds","arg":"120"},{"imagefile":"6ef52d076bf6cc81329725bb01b682a15a38e7d2.png","title":"140 seconds","arg":"140"},{"imagefile":"2ad20ca17a0c4fe637b88093e23fec3d5f3ec7b3.png","title":"160 seconds","arg":"160"},{"imagefile":"9cd2e4d1e1d1b310a37590f05966e39c44c54fbf.png","title":"180 seconds","arg":"180"}]</string>
+				<key>keyword</key>
+				<string>mute time</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Select from predefined mute durations.</string>
+				<key>title</key>
+				<string>Mute time</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>0EA52699-4D57-4650-AD76-1B9EF1A1A5CC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set volume with output muteddelay {query}set volume without output muted</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E72C9267-58E3-40E0-9CD3-4C41D0F28091</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>muteTime</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5075FEF4-9FDD-4CE7-8B74-34E82ACD48C4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The Temporary Mute workflow allows a user to mute the volume of their computer for a specified duration of time. Once the duration of time has elapsed, the computer's volume is automatically unmuted. The user can also manually unmute the volume at any time before the defined duration is over.
+
+The workflow has two modes which can be used:
+
+"Mute for":
+Using the "mute for" keyword phrase allows the computer to be muted for the exact number of seconds specified. Simply include a number after "mute for" and the volume will remain muted for that number of seconds. [Example: "mute for 90"]
+
+"Mute time":
+Using the "mute time" keyword phase allows the user to select from predefined periods of time when muting the computer. After typing "mute time", select one of the predefined durations and the computer will be muted for that amount of time.
+
+
+This workflow was created by Charles Magnuson in Burlingame, California. Please provide reasonable attribution when posting this content online.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0EA52699-4D57-4650-AD76-1B9EF1A1A5CC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>1BA549D4-8C42-4585-9267-3CF47E778B85</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>367CA6B2-485C-413F-AB7D-0E27F4ED1D53</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>5075FEF4-9FDD-4CE7-8B74-34E82ACD48C4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>7A651008-7142-4F96-A2EE-36BF7B6A372E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>E72C9267-58E3-40E0-9CD3-4C41D0F28091</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>2.0</string>
+	<key>webaddress</key>
+	<string>http://mag.cm/</string>
+</dict>
+</plist>
