@@ -10,6 +10,7 @@ create_directories() {
     declare -a DIRECTORIES=(
         "$HOME/Screenshots"
         "$HOME/workspace"
+        "$HOME/.projects"
     )
 
     for i in "${DIRECTORIES[@]}"; do
