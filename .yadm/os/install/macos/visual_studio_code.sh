@@ -7,41 +7,47 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+code_ext_install() {
+
+    declare -r EXT_NAME="$1"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if `mas` is installed.
+
+    if ! cmd_exists "code"; then
+        print_error "$EXT_NAME ('Visual Studio Code code cli' is not installed)"
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Install the specified app.
+
+    execute \
+        "code --install-extension $EXT_NAME" \
+        "$EXT_NAME (Installed Extension)"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 print_in_purple "\n   Visual Studio Code\n\n"
 
-# brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
+brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
 
-#cp $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings.backup.json
-#ok "Your previous config has been saved to: $HOME/Library/Application Support/Code/User/settings.backup.json"
-#cp ./settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-#ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" /usr/local/bin/
+execute "ln -sf \"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\" /usr/local/bin/" \
+    "code command (Link)"
 
-# code --install-extension akamud.vscode-theme-onedark
-# code --install-extension alefragnani.project-manager
-# code --install-extension austin.code-gnu-global
-# code --install-extension codezombiech.gitignore
-# code --install-extension CoenraadS.bracket-pair-colorizer-2
-# code --install-extension Dart-Code.dart-code
-# code --install-extension Dart-Code.flutter
-# code --install-extension deerawan.vscode-dash
-# code --install-extension DmitryDorofeev.empty-indent
-# code --install-extension donjayamanne.git-extension-pack
-# code --install-extension donjayamanne.githistory
-# code --install-extension eamodio.gitlens
-# code --install-extension humao.rest-client
-# code --install-extension kaiwood.indentation-level-movement
-# code --install-extension marus25.cortex-debug
-# code --install-extension mechatroner.rainbow-csv
-# code --install-extension mohsen1.prettify-json
-# code --install-extension ms-python.python
-# code --install-extension ms-vscode.cpptools
-# code --install-extension oderwat.indent-rainbow
-# code --install-extension particle.particle-vscode-core
-# code --install-extension particle.particle-vscode-pack
-# code --install-extension particle.particle-vscode-snippets
-# code --install-extension particle.particle-vscode-theme
-# code --install-extension PeterJausovec.vscode-docker
-# code --install-extension redhat.vscode-yaml
-# code --install-extension SirTori.indenticator
-# code --install-extension vsciot-vscode.vscode-arduino
-# code --install-extension ziyasal.vscode-open-in-github
+VSCODE_USERDIR="$HOME/Library/Application Support/Code/User"
+
+execute "ln -sf $HOME/.vscode-conf/settings.json    \"$VSCODE_USERDIR/settings.json\"" \
+    "settings.json (Link)"
+execute "ln -sf $HOME/.vscode-conf/keybindings.json \"$VSCODE_USERDIR/keybindings.json\"" \
+    "keybindings.json (Link)"
+execute "ln -sf $HOME/.vscode-conf/snippets/        \"$VSCODE_USERDIR/snippets\"" \
+    "snippets (Link)"
+
+for ext in $(cat $HOME/.vscode-conf/vscode-extensions.txt); do
+    code_ext_install "$ext"
+done
