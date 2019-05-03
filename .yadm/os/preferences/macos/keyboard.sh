@@ -28,8 +28,8 @@ print_in_purple "\n   Keyboard\n\n"
 # execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
 #     "Disable automatic period substitution"
 
-# execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
-#     "Disable smart dashes"
+execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
+    "Disable smart dashes"
 
-# execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
-#     "Disable smart quotes"
+execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
+    "Disable smart quotes"

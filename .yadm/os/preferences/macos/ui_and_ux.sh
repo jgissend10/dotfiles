@@ -7,6 +7,14 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   UI & UX\n\n"
 
+
+# defaults write com.apple.finder ShowPathbar -bool true
+# defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# defaults write com.apple.finder ShowStatusBar -bool true
+# defaults write com.apple.finder QLEnableTextSelection -bool true
+# defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+
 execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && \
          defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" \
    "Avoid creating '.DS_Store' files on network or USB volumes"

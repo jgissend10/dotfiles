@@ -12,7 +12,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ./app_store.sh
-# ./chrome.sh
+./chrome.sh
 ./dashboard.sh
 ./dock.sh
 ./finder.sh
@@ -23,8 +23,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 # ./maps.sh
 ./photos.sh
 ./safari.sh
-# ./terminal.sh
-# ./textedit.sh
+./terminal.sh
+./textedit.sh
 ./trackpad.sh
 # ./transmission.sh
 ./ui_and_ux.sh
