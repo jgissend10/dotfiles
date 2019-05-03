@@ -47,15 +47,24 @@ execute "defaults write com.apple.dock showhidden -bool true" \
 execute "defaults write com.apple.dock tilesize -int 60" \
     "Set icon size"
 
-dockutil --no-restart --remove all
-dockutil --no-restart --add "/Applications/Firefox.app"
-dockutil --no-restart --add "/Applications/Google Chrome.app"
-dockutil --no-restart --add "/Applications/Amphetamine.app"
-dockutil --no-restart --add "/Applications/Discord.app"
-dockutil --no-restart --add "/Applications/iTerm.app"
-dockutil --no-restart --add "/Applications/System Preferences.app"
-dockutil --no-restart --add "/Applications/Spotify.app"
-dockutil --no-restart --add "/Applications/Visual Studio Code.app"
+execute "dockutil --no-restart --remove all" \
+    "Remove all apps from the the dock."
+execute "dockutil --no-restart --add \"/Applications/Firefox.app\"" \
+    "Add Firefox to the dock."
+execute "dockutil --no-restart --add \"/Applications/Google Chrome.app\"" \
+    "Add Google Chrome to the dock."
+execute "dockutil --no-restart --add \"/Applications/Amphetamine.app\"" \
+    "Add Amphetamine to the dock."
+execute "dockutil --no-restart --add \"/Applications/Discord.app\"" \
+    "Add Discord to the dock."
+execute "dockutil --no-restart --add \"/Applications/iTerm.app\"" \
+    "Add iTerm to the dock."
+execute "dockutil --no-restart --add \"/Applications/System Preferences.app\"" \
+    "Add System Preferences to the dock."
+execute "dockutil --no-restart --add \"/Applications/Spotify.app\"" \
+    "Add Spotify to the dock."
+execute "dockutil --no-restart --add \"/Applications/Visual Studio Code.app\"" \
+    "Add Visual Studio Code to the dock."
 
 
 killall "Dock" &> /dev/null
