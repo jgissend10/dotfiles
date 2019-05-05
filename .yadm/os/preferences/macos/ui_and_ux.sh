@@ -19,8 +19,8 @@ execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool
         defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" \
     "Avoid creating '.DS_Store' files on network or USB volumes"
 
-# execute "defaults write com.apple.menuextra.battery ShowPercent -string 'NO'" \
-#     "Hide battery percentage from the menu bar"
+execute "defaults write com.apple.menuextra.battery ShowPercent -string 'YES'" \
+    "Show battery percentage from the menu bar"
 
 # execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
 #     "Show language menu in the top right corner of the boot screen"
@@ -56,8 +56,8 @@ execute "defaults write -g AppleFontSmoothing -int 1" \
 execute "sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true" \
     "Enable HiDPI display modes (requires restart)"
 
-# execute "defaults write -g AppleShowScrollBars -string 'Always'" \
-#     "Always show scrollbars"
+execute "defaults write -g AppleShowScrollBars -string 'WhenScrolling'" \
+    "Show scrollbars when scrolling"
 
 execute "defaults write -g NSAutomaticWindowAnimationsEnabled -bool false" \
     "Disable window opening and closing animations."

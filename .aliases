@@ -67,6 +67,11 @@ alias t="tmux"
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+alias copy_ssh_key='xclip -sel clip < ~/.ssh/id_rsa.pub'
+alias count_files_recursive='find . -type f -print | wc -l'
+alias count_files_recursive_per_directory='ls -d */ | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo _"'
+alias fuck!='sudo $history[1]'
+alias flat_this_dir="sudo find . -mindepth 2 -type f -exec mv -i '{}' . ';'"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

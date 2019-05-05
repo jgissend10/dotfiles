@@ -50,6 +50,9 @@ execute "defaults write com.apple.dock showhidden -bool true" \
 execute "defaults write com.apple.dock tilesize -int 60" \
     "Set icon size"
 
+execute "defaults write com.apple.dock scroll-to-open -bool true" \
+    "Enable scroll gestures for Dock icons"
+
 execute "dockutil --no-restart --remove all" \
     "Remove all apps from the the dock."
 execute "dockutil --no-restart --add \"/Applications/Firefox.app\"" \
