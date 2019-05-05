@@ -16,6 +16,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./browsers.sh
 # ./compression_tools.sh
 ./fonts.sh
+./go.sh
 # ./gpg.sh
 ./image_tools.sh
 ./mac_app_store.sh
@@ -24,6 +25,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./../npm.sh
 ./pyenv.sh
 # ./quick_look.sh
+./rust.sh
 # ./tmux.sh
 # ./video_tools.sh
 # ./../vim.sh

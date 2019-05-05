@@ -19,14 +19,14 @@ print_in_purple "\n   Keyboard\n\n"
 # execute "defaults write -g KeyRepeat -int 1" \
 #     "Set the key repeat rate to fast"
 
-# execute "defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false" \
-#     "Disable automatic capitalization"
+execute "defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false" \
+    "Disable automatic capitalization"
 
-# execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
-#     "Disable automatic correction"
+execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
+    "Disable automatic correction"
 
-# execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
-#     "Disable automatic period substitution"
+execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
+    "Disable automatic period substitution"
 
 execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
     "Disable smart dashes"

@@ -1,19 +1,34 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    {
-      "key": "cmd+shift+z",
-      "command": "workbench.action.terminal.focus"
-    },
-    {
-      "key": "cmd+shift+a",
-      "command": "workbench.action.terminal.focusNext"
-    },
-    {
-      "key": "cmd+shift+s",
-      "command": "workbench.action.terminal.focusPrevious"
-    },
-    {
-      "key": "cmd+shift+x",
-      "command": "workbench.action.terminal.kill"
-    }
-  ]
+  {
+    "key": "cmd+shift+z",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "cmd+shift+a",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  {
+    "key": "cmd+shift+s",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  {
+    "key": "cmd+shift+x",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
+  }
+]
