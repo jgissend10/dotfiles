@@ -41,8 +41,7 @@ fi
 
 install_latest_stable_python() {
 
-    # Install the latest stable version of Node
-    # (this will also set it as the default).
+    # Install the latest stable version of python
 
     execute \
         ". $LOCAL_SHELL_CONFIG_FILE \
@@ -79,8 +78,7 @@ update_pyenv() {
 
 install_python_version() {
 
-    # Install the latest stable version of Node
-    # (this will also set it as the default).
+    # Install the given version of python
 
     declare -r PYTHON_VERSION="$1"
 

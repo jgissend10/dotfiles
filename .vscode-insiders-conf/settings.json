@@ -4,9 +4,8 @@
     "terminal.integrated.copyOnSelection": true,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.statusBar.feedback.visible": false,
-    "python.pythonPath": "/usr/local/bin/python3",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

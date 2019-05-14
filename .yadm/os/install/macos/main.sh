@@ -15,6 +15,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./bash_completions.sh
 ./browsers.sh
 # ./compression_tools.sh
+./dart_flutter.sh
 ./fonts.sh
 ./go.sh
 # ./gpg.sh
@@ -30,6 +31,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # ./video_tools.sh
 # ./../vim.sh
 ./visual_studio_code.sh
+./visual_studio_code_insiders.sh
 # ./web_font_tools.sh
 
 ./jupyter.sh

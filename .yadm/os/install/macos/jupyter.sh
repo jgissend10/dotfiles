@@ -12,7 +12,7 @@ declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
 
 create_jupyter_environment() {
 
-    # Install the latest stable version of Node
+    # Install the latest stable version of jupyter
     # (this will also set it as the default).
 
     declare -r PYTHON_VERSION="$1"
@@ -52,6 +52,8 @@ main() {
     if command -v pyenv 1>/dev/null 2>&1; then
         create_jupyter_environment "3.7.3" "jupyterenv"
     fi
+
+    print_in_green "\n    'alias jupnote='PYENV_VERSION=jupyterenv-3.7.3 pyenv exec jupyter notebook'\n\n"
 
 }
 

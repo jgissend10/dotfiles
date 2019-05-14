@@ -65,14 +65,20 @@ execute "dockutil --no-restart --add \"/Applications/Discord.app\"" \
     "Add Discord to the dock."
 execute "dockutil --no-restart --add \"/Applications/iTerm.app\"" \
     "Add iTerm to the dock."
-execute "dockutil --no-restart --add \"/Applications/System Preferences.app\"" \
-    "Add System Preferences to the dock."
 execute "dockutil --no-restart --add \"/Applications/Spotify.app\"" \
     "Add Spotify to the dock."
 execute "dockutil --no-restart --add \"/Applications/Visual Studio Code.app\"" \
     "Add Visual Studio Code to the dock."
+execute "dockutil --no-restart --add \"/Applications/Visual Studio Code - Insiders.app\"" \
+    "Add Visual Studio Code - Insiders to the dock."
 execute "dockutil --no-restart --add \"/Applications/LastPass.app\"" \
     "Add LastPass to the dock."
+execute "dockutil --no-restart --add \"/Applications/System Preferences.app\"" \
+    "Add System Preferences to the dock."
+execute "dockutil --no-restart --add \"/Applications/Utilities/Activity Monitor.app\"" \
+    "Add Activity Monitor to the dock."
+execute "dockutil --no-restart --section others --add '~/Downloads' --view grid --display folder --sort dateadded" \
+    "Add ~/Downloads to the dock."
 
 # Hot corners
 # Possible values:

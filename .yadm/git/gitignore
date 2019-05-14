@@ -29,6 +29,7 @@ npm-debug.log
 .LSOverride
 .Spotlight-V100
 .Trashes
+.Trash
 Icon
 
 
@@ -50,3 +51,10 @@ Session.vim
 Desktop.ini
 ehthumbs.db
 Thumbs.db
+
+
+# ----------------------------------------------------------------------
+# | Programs                                                           |
+# ----------------------------------------------------------------------
+
+Calibre Library/

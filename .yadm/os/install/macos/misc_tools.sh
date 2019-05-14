@@ -8,15 +8,18 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Miscellaneous Tools\n\n"
 
+brew_install "asciinema terminal recorder" "asciinema"
 brew_install "AWS CLI" "awscli"
 brew_install "Android Platform Tools" "android-platform-tools" "caskroom/cask" "cask"
 brew_install "App Cleaner" "appcleaner" "caskroom/cask" "cask"
+brew_install "BeardedSpice" "beardedspice" "caskroom/cask" "cask"
 brew_install "Calibre" "calibre" "caskroom/cask" "cask"
 brew_install "Cyberduck" "cyberduck" "caskroom/cask" "cask"
 brew_install "Docker" "docker" "caskroom/cask" "cask"
 brew_install "Fenix" "fenix" "caskroom/cask" "cask"
 brew_install "Gas Mask" "gas-mask" "caskroom/cask" "cask"
 brew_install "Grand Perspective" "grandperspective" "caskroom/cask" "cask"
+brew_install "HTTPie" "httpie"
 brew_install "jq" "jq"
 brew_install "lastpass-cli" "lastpass-cli"
 brew_install "Mockoon" "mockoon" "caskroom/cask" "cask"
