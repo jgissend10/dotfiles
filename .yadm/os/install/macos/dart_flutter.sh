@@ -8,6 +8,17 @@ declare -r LOCAL_SHELL_CONFIG_FILE="$HOME/.bash.local"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+install_dart() {
+
+    # Install the latest stable version of dart
+    # (this will also set it as the default).
+
+    brew_install "Dart" "dart" "dart-lang/dart" "cask"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 install_flutter() {
 
     # Install the latest stable version of flutter
@@ -57,6 +68,8 @@ main() {
     print_in_green "\n    Follow the flutter install guide here: https://flutter.dev/docs/get-started/install/macos\n\n"
 
     . $LOCAL_SHELL_CONFIG_FILE
+
+    # install_dart
 
     if ! cmd_exists "flutter"; then
         install_flutter

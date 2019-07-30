@@ -31,7 +31,7 @@ particle.particle-vscode-core
 particle.particle-vscode-pack
 particle.particle-vscode-snippets
 particle.particle-vscode-theme
-PeterJausovec.vscode-docker
+ms-azuretools.vscode-docker
 redhat.vscode-yaml
 SirTori.indenticator
 VisualStudioExptTeam.vscodeintellicode

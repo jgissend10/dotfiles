@@ -57,12 +57,12 @@ execute "dockutil --no-restart --remove all" \
     "Remove all apps from the the dock."
 execute "dockutil --no-restart --add \"/Applications/Firefox.app\"" \
     "Add Firefox to the dock."
-execute "dockutil --no-restart --add \"/Applications/Google Chrome.app\"" \
-    "Add Google Chrome to the dock."
 execute "dockutil --no-restart --add \"/Applications/Amphetamine.app\"" \
     "Add Amphetamine to the dock."
 execute "dockutil --no-restart --add \"/Applications/Discord.app\"" \
     "Add Discord to the dock."
+execute "dockutil --no-restart --add \"/Applications/Slack.app\"" \
+    "Add Slack to the dock."
 execute "dockutil --no-restart --add \"/Applications/iTerm.app\"" \
     "Add iTerm to the dock."
 execute "dockutil --no-restart --add \"/Applications/Spotify.app\"" \
@@ -73,6 +73,8 @@ execute "dockutil --no-restart --add \"/Applications/Visual Studio Code - Inside
     "Add Visual Studio Code - Insiders to the dock."
 execute "dockutil --no-restart --add \"/Applications/LastPass.app\"" \
     "Add LastPass to the dock."
+    execute "dockutil --no-restart --add \"/Applications/Google Chrome.app\"" \
+    "Add Google Chrome to the dock."
 execute "dockutil --no-restart --add \"/Applications/System Preferences.app\"" \
     "Add System Preferences to the dock."
 execute "dockutil --no-restart --add \"/Applications/Utilities/Activity Monitor.app\"" \

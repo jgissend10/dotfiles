@@ -38,6 +38,7 @@ alias p="cd ~/workspace"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias awsexamples="cd /usr/local/share/awscli/examples"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -97,6 +98,7 @@ alias brewr="brew uninstall"
 alias brews="brew search"
 alias brewu="brew update \
                 && brew upgrade \
+                && brew cask upgrade \
                 && brew cleanup"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -253,3 +255,8 @@ alias killos="killfinder && killdock && killmenubar"
 
 alias find_big_files="du -a / | sort -n -r | head -n 10"
 alias delete_pycs="find . -name \"*.pyc\" -exec rm -rf {} \;"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+alias adb_remote_start="adb tcpip 5555"
+alias adb_ip="adb shell ifconfig | grep wlan0 -A 1"
